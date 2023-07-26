@@ -68,6 +68,11 @@
   margin: 2rem;
 }
 
+.precio {
+  font-size: 2.3rem;
+  text-shadow: 0 0 0.2em rgb(8, 8, 8);
+}
+
 .whatsapp {
   position: fixed;
   bottom: 5rem;
@@ -170,7 +175,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.gridsttosfaciales .tratamientosfaciales .fondottofacial {
+.gridsttosfaciales .fondottofacial {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -178,12 +183,12 @@
   color: white;
   border: solid white 0.1rem;
   text-align: left;
-  padding: 1rem;
+  padding: 3rem;
   margin: 2rem;
   width: 40rem;
-  height: 50rem;
+  height: 48rem;
 }
-.gridsttosfaciales .tratamientosfaciales .fondottofacial .imagenttofacial {
+.gridsttosfaciales .fondottofacial .imagenttofacial {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -227,11 +232,6 @@ button a {
   .gridsttosfaciales h4 {
     font-size: 1.9rem;
   }
-  .gridsttosfaciales .fondottofacial {
-    padding: 0%;
-    margin: 0%;
-    width: 20rem;
-  }
 }
 @media screen and (max-width: 528px) {
   .gridsttosfaciales {
@@ -247,6 +247,10 @@ button a {
   }
   .gridsttosfaciales h4 {
     font-size: 1.5rem;
+  }
+  .gridsttosfaciales .fondottofacial {
+    width: 32rem;
+    height: 45rem;
   }
 }
 .gridsnuestroespacio {

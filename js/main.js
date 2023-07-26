@@ -13,7 +13,6 @@ const PI = 3.14;
 /*concatenando variables*/
 let nombreCompleto= nombre + apellido;
 let resultado= PI + 3.24;
-resultado = PI + numero;
 
 /* metodo de salida*/
 console.log(apellido);
@@ -38,9 +37,26 @@ if (temperatura <= 30){
 }else{
     console.log("que calor!!");
 }
+/* signos: = asignacion, == comparacion, != distinto,*/
 
 if (temperatura > 30){
     console.log("que calor!!");
+}else{
+    console.log("esta agradable");
 }
 
+let Usuario= prompt("Ingresa tu usuario");
+
+if (Usuario == "") {
+    console.log("no ingresaste tu usuario");
+}else{
+    console.log("Bienvenido/a" + Usuario);
+}
+
+//otra forma de ponerlo
+if (Usuario != "") {
+    console.log("Bienvenido/a" + Usuario);
+}else{
+    console.log("no ingresaste tu usuario");
+}
 
