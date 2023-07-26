@@ -3,10 +3,8 @@
 multilinea*/
 
 /*declaracion y asignacion de variable correcta*/
-let edad=40; /* ES6*/
-let nombre = "daniel";
-let apellido = "juarez";
-let numero = 33;
+let nombre= "daniel";
+let apellido= "perez";
 
 /*contantes, variable que nunca cambia su valor, hay que establecer su valor en la misma linea*/
 
