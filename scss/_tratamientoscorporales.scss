@@ -1,0 +1,156 @@
+
+.fondos{
+    background-color: rgba(61, 126, 126, 0.5);
+    color: white;
+    border: solid white 0.1rem;
+}
+.gridstratamientoscorporales{
+    background-color: rgba(218, 202, 166, 0.2);
+    display: grid;
+    grid-template-columns:0.2fr 2fr 0.2fr;
+    grid-template-rows: 0.1fr 0.1fr auto auto 3fr 0.1fr auto;
+    grid-template-areas:
+    "header header header"
+    ". titulo ."
+    ". combos ."
+    ". titulo2 ."
+    ". individuales ."
+    ". arriba ."
+    "footer footer footer";
+
+    .headercorporales{
+        grid-area: header;
+        @extend .header;
+    }
+    .titulotratamientoscorp{
+        grid-area: titulo;
+        border-bottom: solid white 0.1rem;
+    }
+    .maincorporales{
+        grid-area: combos;
+        border-bottom: solid white 0.1rem;
+    }
+    .tituloindividualescorp{
+        grid-area: titulo2;
+        text-shadow: 0 0 0.2em rgb(255, 253, 253);
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        color: black;
+    }
+    .tituloindividuales{
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.5rem;
+        font-weight: normal;
+    }
+    .individualescorp{
+        grid-area: individuales;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1rem;
+    }
+    .volverarriba{
+        grid-area: arriba;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .footercorporales{
+        grid-area: footer;
+    }
+}
+.fondotto{
+    @extend .fondos;
+    text-align: left;
+    margin: 4rem;
+    padding: 4rem;
+}
+.fondottoindividuales{
+    @extend .fondos;
+    text-align: center;
+    padding: 4rem;
+    width: 30rem;
+    height: 30rem;
+    margin: 2rem;
+}
+
+.whatsapp{
+    position: fixed;
+    bottom: 5rem;
+    right: 3rem;
+    .iconowhatsapp2{
+        width: 6rem;
+        border-radius: 50%;
+        animation-name: wpp;
+        animation-iteration-count: 3;
+        animation-timing-function: linear;
+        animation-duration: 2s;
+        &:hover{
+            width: 7rem;
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .gridstratamientoscorporales{
+        h1{
+            font-size: 3rem;
+        }
+        h2{
+            font-size: 3rem;
+        }
+        h3{
+            font-size: 2rem;
+        }
+        h4{
+            font-size: 1.9rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+    }
+    .fondottoindividuales{
+        width: 25rem;
+        height: 25rem;
+    }
+}
+
+@media screen and (max-width:500px){
+    .gridstratamientoscorporales{
+        grid-template-columns: 1fr;
+        h1{
+            font-size: 2.5rem;
+        }
+        h2{
+            font-size: 2.5rem;
+        }
+        h3{
+            font-size: 1.8rem;
+        }
+        h4{
+            font-size: 1.7rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+    }
+    .whatsapp{
+        bottom: 4rem;
+        right: 2rem;
+        .iconowhatsapp2{
+            width: 5rem;
+            border-radius: 50%;
+            &:hover{
+                width: 6rem;
+            }
+        }
+    }
+}
+@keyframes wpp{
+    0% {width: $tamanioprincipalredes;}
+    50% {width: 7rem;}
+    100% {width: $tamanioprincipalredes;}
+}

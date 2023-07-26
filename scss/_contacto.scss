@@ -1,0 +1,114 @@
+
+
+.gridscontacto{
+    background-color: rgba(218, 202, 166, 0.2);
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+    grid-template-rows: 0.1fr 0.1fr 6fr 0.1fr;
+    grid-template-areas: 
+    "header header header header"
+    ". titulo titulo ."
+    ". main formulario ."
+    "footer footer footer footer";
+    .headercontacto{
+        grid-area: header;
+        @extend .header;
+    }
+    .titulocontacto{
+        grid-area: titulo;
+        border-bottom: solid white 0.1rem;
+    }
+    .maincontacto{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .opinion1{
+        text-shadow: 0 0 0.2em rgb(255, 253, 253);
+        text-align: center;
+        padding-bottom: 2rem;
+        font-size: 3.5rem;
+        font-family: 'Raleway', sans-serif;
+        font-weight: normal;
+    }
+    .opinion2{
+        text-shadow: 0 0 0.2em rgb(255, 253, 253);
+        text-align: center;
+        padding-bottom: 2rem;
+        font-size: 3.5rem;
+        font-family: 'Oooh Baby', cursive;
+        font-weight: normal;
+    }
+    .formulario{
+        grid-area: formulario;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(61, 126, 126, 0.5);
+        color: white;
+        border: solid white 0.1rem;
+        padding: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        label{
+            font-size: 1.8rem;
+        }
+        legend{
+            font-weight: bold;
+        }
+        .btn-primary{
+            background-color: rgb(0, 0, 0);
+            --bs-btn-border-color: #090a0b;
+            --bs-btn-hover-border-color: #ffffff;
+        }
+    }
+    .footercontacto{
+        grid-area: footer;
+    }
+}
+
+
+@media screen and (max-width:768px){
+    .gridscontacto{
+        grid-template-columns: 0.1fr 2fr 0.1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "header header header"
+        ". titulo ."
+        ". main ."
+        ". formulario ."
+        "footer footer footer";
+        h1{
+            font-size: 3rem;
+        }
+        .opinion1{
+            font-size: 3rem;
+            padding-top: 2rem;
+        }
+        .opinion2{
+            font-size: 3rem;
+        }
+    }
+}
+@media screen and (max-width:500px){
+    .gridscontacto{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "titulo"
+        "main"
+        "formulario"
+        "footer";
+        h1{
+            font-size: 2.5rem;
+        }
+        .opinion1{
+            font-size: 2.5rem;
+        }
+        .opinion2{
+            font-size: 2.5rem;
+        }
+    }
+}

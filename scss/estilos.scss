@@ -1,0 +1,264 @@
+
+@import "variables";
+@import "tratamientoscorporales";
+@import "tratamientosfaciales";
+@import "nuestroespacio";
+@import "contacto";
+@import "limpiezaprofunda";
+@import "dermaplaning";
+
+@mixin shadow-size{
+    text-shadow: 0 0 0.2em rgb(255, 253, 253);
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: black;
+    font-size: 3.5rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image:url(../imagenes/imangefondo3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    @include shadow-size;
+}
+
+h2{
+    font-size: 2.3rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+h3{
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+h4{
+    font-size: 2.3rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+h5{
+    font-size: 1.8rem;
+}
+p{
+    font-size: 1.8rem;
+}
+.logo{
+    width: 10rem;
+    height: 10rem;
+}
+ol{
+    list-style-type: disc;
+    li {
+        font-size: 1.5rem;
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    
+    }
+}
+
+ul{
+    list-style-type: none;
+    li{
+        font-size: 2rem;
+        font-weight: bolder;
+        display: inline-block;
+        padding: 0.5rem;
+    }
+}
+a{
+    color: black;
+}
+footer{
+    background-color: white;
+    p{
+        text-align: center;
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color:white;
+    justify-content: space-between;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.nav-link{
+    color: rgb(121, 158, 146);
+}
+
+.gridshome{
+    background-color: rgba(218, 202, 166, 0.2);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 6.5fr 0.1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    .headerhome{
+        grid-area: header;
+        @extend .header;
+    }
+    .mainhome{
+        grid-area: main;
+        @include flex-row-center;
+        padding-top: 10rem;
+        margin: 2rem;
+        .textoprincipal{
+            text-align:center;
+            color: rgb(0, 0, 0);
+        }
+    }
+    .titulo{  
+        @include shadow-size;
+        font-family: 'Oooh Baby', cursive;  
+        font-size: 15rem;
+        text-shadow: 0 0 0.2em rgb(255, 253, 253);  
+    }
+    .subtitulo2{
+        @include shadow-size;
+        font-size: 3rem;
+        padding: 2rem;
+        text-align: center;
+        text-shadow: 0 0 0.2em rgb(255, 255, 255);
+    }
+    .subtitulo3{  
+        font-family: 'Oooh Baby', cursive;
+        font-size: 4.2rem;
+        text-shadow: 0 0 0.2em rgb(255, 255, 255);      
+    }
+    .footerhome{
+        grid-area: footer;
+        .redeshome{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            bottom: 25%;
+            right: 0rem;
+        }
+    } 
+}
+.iconosredes{
+    width: $tamanioprincipalredes;
+    padding: 1rem;
+    border-radius: 50%;
+}
+.iconowhatsapp{
+    @extend .iconosredes;
+}
+.iconoinstagram{
+    @extend .iconosredes;
+}
+.iconofacebook{
+    @extend .iconosredes;
+
+}
+.iconoubicacion{
+    @extend .iconosredes;
+}
+
+@media screen and (max-width:768px){
+    .gridshome{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    }
+    .textoprincipal{   
+        padding-bottom: 6rem;
+        .titulo{    
+            font-size: 10rem;  
+        }
+        .subtitulo2{
+            font-size: 3rem;
+        }
+        .subtitulo3{  
+            font-size: 4rem;    
+        }
+    }
+    ul li{
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+}
+@media screen and (max-width:500px){
+    .gridshome{
+        grid-template-rows: 0.1fr 7fr 0.1fr;
+    }
+    .logo{
+        width: 10rem;
+        height: 10rem;
+    }
+    ul li{
+        font-size: 1rem;
+        padding: 0.2rem;
+    }
+    .iconowhatsapp{
+        width: $tamaniosecundarioredes;
+    
+    }
+    .iconoinstagram{
+        width: $tamaniosecundarioredes;
+    }
+    .iconofacebook{
+        width: $tamaniosecundarioredes;
+    }
+    .iconoubicacion{
+        width: $tamaniosecundarioredes;
+    
+    }
+    .textoprincipal{
+        .titulo{    
+            font-size: 8rem;  
+        }
+        .subtitulo2{  
+            font-size: 2.5rem;    
+        }
+        .subtitulo3{
+            font-size: 3.5rem;
+        }
+    }
+    footer{
+        p{
+            font-size: 1.2rem;
+            padding-top: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width:350px){
+    .textoprincipal{
+        .titulo{    
+            font-size: 7.8rem;  
+        }
+        .subtitulo2{  
+            font-size: 2rem;    
+        }
+        .subtitulo3{
+            font-size: 2.4rem;
+        }
+    }
+}
+

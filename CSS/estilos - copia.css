@@ -1,0 +1,699 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+/* html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color:rgb(255, 219, 219);
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 4rem;
+    text-align: center;
+}
+h2{
+    font-size: 3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 4rem;
+    text-align: center;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 2.1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+h5{
+    font-size: 1.8rem;
+}
+p{
+    font-size: 1.3rem;
+}
+header{
+    background-color: white;
+}
+.logo{
+    width: 14rem;
+    height: 14rem;
+}
+
+ol{
+    list-style-type: disc;
+}
+ol li {
+    font-size: 1.5rem;
+
+}
+ul{
+    list-style-type: none;
+}
+ul li{
+    font-size: 2rem;
+    font-weight: bolder;
+    display: inline-block;
+    padding: 1rem;
+}
+li a{
+    color: black;
+    text-decoration: none;
+}
+a{
+    color: black;
+}
+
+.gridshome{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 0.1fr 3fr 0.1fr;
+    grid-template-areas: 
+    "header header"
+    "main imagen"
+    "footer imagen";
+}
+.headerhome{
+    grid-area: header;
+}
+.mainhome{
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.imagenhome{
+    grid-area: imagen;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.footerhome{
+    grid-area: footer;
+    height: 11rem;
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-around;
+} 
+.titulo{  
+    font-family: 'Oooh Baby', cursive;  
+    font-size: 10rem;  
+}  
+.subtitulo2{  
+    font-family: 'Oooh Baby', cursive;
+    font-size: 3.3rem;
+    font-weight: bold;    
+}  
+.textoprincipal{   
+    text-align:center;
+    margin-top: 15rem;  
+}  
+.imagenprincipal{  
+    width: 65rem;  
+    height: 76rem; 
+}
+
+@media screen and (max-width:768px){
+    .gridshome{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 1.5fr 2fr 0.1fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "imagen"
+        "footer";
+    }
+    .imagenprincipal{
+        width: 100%;  
+        height: 70rem;
+        padding-top: 2rem;
+    }
+    .textoprincipal{
+        margin-top: 5rem;
+    }
+    ul li{
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+}
+@media screen and (max-width:500px){
+    .footerhome{
+        justify-content: space-between;
+    }
+    .imagenprincipal{
+        width: 50rem;
+        height:60rem;
+    }
+}
+
+
+.gridstratamientoscorporales{
+    display: grid;
+    grid-template-columns:0.2fr 0.7fr 2fr  0.2fr;
+    grid-template-rows: 0.2fr 0.2fr 0.3fr 5fr 2fr 0.1fr 0.1fr;
+    grid-template-areas:
+    "header header header header"
+    ". titulo titulo ."
+    ". main main ."
+    ". individuales combos ."
+    ". descripcion descripcion ."
+    ". arriba arriba ."
+    ". footer footer .";
+}
+
+.headercorporales{
+    grid-area: header;
+}
+.titulotratamientoscorp{
+    grid-area: titulo;
+    border-bottom: solid 0.1rem;
+}
+.maincorporales{
+    grid-area: main;
+    border-bottom: solid 0.1rem;
+    padding: 5rem;
+    text-align: center;
+}
+.combostratamientoscorp{
+    grid-area: combos;
+}
+.individualestratamientoscorp{
+    grid-area: individuales;
+    border-right: solid 0.1rem;
+}
+.beneficioscorporales{
+    grid-area: descripcion;
+    border-top: solid 0.1rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+.volverarriba{
+    grid-area: arriba;
+    text-align: center;
+    padding-top: 1rem;
+}
+.footercorporales{
+    grid-area: footer;
+}
+.tratamientoscorporales{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+.fondottosindividuales{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: solid 0.1rem;
+    width: 25rem;
+    height: 16rem;
+}
+.arriba{
+    color: black;
+}
+.promo{
+border-bottom: ridge ;
+}
+@media screen and (max-width:768px){
+    .gridstratamientoscorporales{
+        grid-template-columns:0.2fr 0.7fr 2fr  0.2fr;
+        grid-template-rows: 0.2fr 0.2fr 0.3fr 5fr 2fr 0.1fr 0.1fr;
+        grid-template-areas:
+        "header header header header"
+        ". titulo titulo ."
+        ". main main ."
+        "individuales individuales combos combos"
+        ". descripcion descripcion ."
+        ". arriba arriba ."
+        ". footer footer .";
+    }
+}
+@media screen and (max-width:500px){
+    .gridstratamientoscorporales{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.2fr 6fr 1fr 0.1fr 0.1fr;
+        grid-template-areas:
+        "header"
+        "titulo"
+        "main"
+        "combos"
+        "individuales"
+        "descripcion"
+        "arriba"
+        "footer";
+    }
+    .individualestratamientoscorp{
+        border-right: none;
+    }
+    .combostratamientoscorp{
+        border-bottom: solid 0.1rem;
+    }
+}
+
+.gridsttosfaciales{
+    display: grid;
+    grid-template-columns: 0.2fr 3fr 0.2fr;
+    grid-template-rows: 0.2fr 0.2fr 1fr 2fr 0.1fr;
+    grid-template-areas:
+    "header header header"
+    ". titulo ."
+    ". main ."
+    ". ttosfaciales ."
+    ". footer .";
+}
+.headerfaciales{
+    grid-area: header;
+}
+.titulottofacial{
+    grid-area: titulo;
+    border-bottom: solid 0.1rem ;
+}
+.mainfaciales{
+    grid-area: main;
+    text-align: center;
+    border-bottom: solid 0.1rem;
+    padding: 5rem;
+}
+.tratamientosfaciales{
+    grid-area: ttosfaciales;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+.footerfaciales{
+    grid-area: footer;
+}
+@media screen and (max-width:768px){
+    .gridsttosfaciales{
+        grid-template-columns: 0.2fr 2fr 0.2fr;
+        grid-template-rows: 0.2fr 0.2fr 0.2fr 2fr 0.1fr;
+        grid-template-areas:
+        "header header header"
+        ". titulo ."
+        ". main ."
+        ". ttosfaciales ."
+        ". footer .";
+    }
+}
+@media screen and (max-width:500px){
+    .gridsttosfaciales{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header"
+        "titulo"
+        "main"
+        "ttosfaciales"
+        "footer";
+    }
+}
+
+
+.gridslimpiezafacial{
+    display: grid;
+    grid-template-rows: 0.4fr 0.4fr 1fr 1fr 0.1fr 0.1fr;
+    grid-template-columns: 0.3fr 2fr 1fr 0.3fr;
+    grid-template-areas:
+    "header header header header"
+    ". titulo titulo ."
+    ". incluye imagen ."
+    ". beneficios imagen ."
+    ". volver imagen ."
+    ". footer footer .";
+}
+.headerlimpiezafacial{
+    grid-area: header;
+}
+.volveratrasfacial{
+    grid-area: volver;
+
+}
+.titulolimpiezafacial{
+    grid-area: titulo;
+    justify-items: center;
+    border-bottom: solid 0.1rem;
+}
+.incluyelimpiezafacial{
+    grid-area: incluye;
+    padding-left: 3rem;
+    padding-top: 3rem;
+}
+.beneficioslimpiezafacial{
+    grid-area: beneficios;
+    padding-left: 3rem;
+}
+.imagenlimpiezafacial{
+    grid-area: imagen;
+}
+.footerlimpiezafacial{
+    grid-area: footer;
+}
+.imagenfacial{
+    width: 50rem;
+}
+
+@media screen and (max-width:768px){
+    .gridslimpiezafacial{
+        grid-template-rows: 0.2fr 0.2fr 0.7fr 1fr 0.1fr 0.1fr;
+        grid-template-columns: 0.3fr 1.5fr 1.5fr 0.3fr;
+        grid-template-areas:
+        "header header header header"
+        ". titulo titulo ."
+        ". incluye beneficios ."
+        ". imagen imagen ."
+        ". volver volver ."
+        ". footer footer .";
+    }
+    .imagenlimpiezafacial{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .beneficioslimpiezafacial{
+        padding-top: 3rem;
+        border-bottom: solid 0.1rem;
+    }
+    .volveratrasfacial{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .incluyelimpiezafacial{
+        border-bottom: solid 0.1rem;
+    }
+}
+@media screen and (max-width:500px){
+    .gridslimpiezafacial{
+        grid-template-rows: 0.1fr 0.1fr 1.5fr 2fr 0.1fr 0.1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "header header"
+        "titulo titulo"
+        "incluye beneficios"
+        "imagen imagen"
+        "volver volver"
+        "footer footer";
+    }
+    .imagenfacial{
+        width: 35rem;
+        height: 40rem;
+    }
+    .imagenlimpiezafacial{
+        align-items: center;
+    }
+}
+.gridsdermaplaning{
+    display: grid;
+    grid-template-columns: 0.3fr 1.5fr 1.5fr 1fr 0.3fr;
+    grid-template-rows: 0.2fr 0.1fr 0.5fr 0.5fr 0.1fr 0.1fr;
+    grid-template-areas:
+    "header header header header header"
+    ". titulo titulo titulo ."
+    ". incluye incluye imagen ."
+    ". beneficios contraindicaciones imagen ."
+    ". volver volver imagen ."
+    ". footer footer footer .";
+}
+.headerdermaplaning{
+    grid-area: header;
+}
+.volveratrasdermaplaning{
+    grid-area: volver;
+}
+.titulodermaplaning{
+    grid-area: titulo;
+    border-bottom: solid 0.1rem;
+}
+.incluyedermaplaning{
+    grid-area: incluye;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+}
+.beneficiosdermaplaning{
+    grid-area: beneficios;
+    padding-left: 3rem;
+}
+.contraindicacionesdermaplaning{
+    grid-area: contraindicaciones;
+    padding-left: 3rem;
+}
+.imagenesdermaplaning{
+    grid-area: imagen;
+}
+.footerdermaplaning{
+    grid-area: footer;
+}
+.imagendermaplaning{
+    width: 55rem;
+}
+@media screen and (max-width:768px){
+    .gridsdermaplaning{
+        grid-template-columns: 0.3fr 1.5fr 1.5fr 0.3fr;
+        grid-template-rows: 0.2fr 0.2fr 0.5fr 0.5fr 1fr 0.1fr 0.1fr;
+        grid-template-areas:
+        "header header header header "
+        ". titulo titulo ."
+        ". incluye incluye ."
+        ". beneficios contraindicaciones ."
+        ". imagen imagen ."
+        ". volver volver ."
+        ". footer footer .";
+    }
+    .beneficiosdermaplaning{
+        border-bottom: solid 0.1rem;
+    }
+    .contraindicacionesdermaplaning{
+        border-bottom: solid 0.1rem;
+    }
+    .imagenesdermaplaning{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .volveratrasdermaplaning{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:500px){
+    .gridsdermaplaning{
+        grid-template-columns:1.5fr 1.5fr;
+        grid-template-rows: 0.2fr 0.2fr 0.5fr 0.5fr 1fr 0.1fr 0.1fr;
+        grid-template-areas:
+        "header header"
+        "titulo titulo"
+        "incluye incluye"
+        "beneficios contraindicaciones"
+        "imagen imagen"
+        "volver volver"
+        "footer footer";
+    }
+    .imagendermaplaning{
+        width: 35rem;
+    }
+}
+.gridsnuestroespacio{
+    display: grid;
+    grid-template-columns: 0.2fr 1.5fr 1fr 0.2fr;
+    grid-template-rows: 0.2fr 0.2fr 1.5fr 0.2fr 1fr 0.1fr;
+    grid-template-areas: 
+    "header header header header"
+    ". titulo titulo ."
+    ". galeria galeria ."
+    ". ubicacion ubicacion ."
+    ". mapa mapa ."
+    ". footer footer .";
+}
+.headernuestroespacio{
+    grid-area: header;
+}
+.titulonuestroespacio{
+    grid-area: titulo;
+    border-bottom: solid 0.1rem;
+}
+
+.galeria{
+    grid-area: galeria;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 0.1rem;
+}
+.tituloubicacion{
+    grid-area: ubicacion;
+}
+.ubicacion{
+    grid-area: mapa;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footernuestroespacio{
+    grid-area: footer;
+}
+.ubicacion1{
+    background-image: url(../imagenes/ubicacion8.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+    width: 30rem;
+    padding-top: 13rem;
+}
+
+.carrusel{
+    width: 50rem;
+    height: 70rem;
+    padding: 3rem;
+}
+@media screen and (max-width:768px){
+    .gridsnuestroespacio{
+        grid-template-columns: 0.2fr 2fr 0.2fr;
+        grid-template-areas: 
+        "header header header"
+        ". titulo ."
+        ". galeria ."
+        ". ubicacion ."
+        ". mapa ."
+        ". footer .";
+    }
+    .ubicacion1{
+        display: none;
+    }
+}
+@media screen and (max-width:500px){
+    .ubicacion2{
+        width: 40rem;
+    }
+    .carrusel{
+        width: 40rem;
+        height: 60rem;
+    }
+}
+
+.gridscontacto{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+    grid-template-rows: 0.2fr 0.2fr 3fr 0.1fr;
+    grid-template-areas: 
+    "header header header header"
+    ". titulo titulo ."
+    ". main formulario ."
+    ". footer footer .";
+}
+.headercontacto{
+    grid-area: header;
+}
+.titulocontacto{
+    grid-area: titulo;
+    border-bottom: solid 0.1rem;
+}
+.maincontacto{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.formulario{
+    grid-area: formulario;
+    padding: 2rem;
+}
+.footercontacto{
+    grid-area: footer;
+}
+label{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+legend{
+    font-weight: bold;
+}
+.opinion1{
+    font-size: 3.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+.opinion2{
+    font-family: 'Oooh Baby', cursive;
+}
+@media screen and (max-width:768px){
+    .opinion1{
+        font-size: 2.3rem;
+    }
+    .opinion2{
+        font-size: 2rem;
+    }
+    .gridscontacto{
+        grid-template-rows: 0.2fr 0.2fr 2fr 0.1fr;
+    }
+}
+@media screen and (max-width:500px){
+    .gridscontacto{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.2fr 0.5fr 1fr 0.1fr;
+        grid-template-areas: 
+        "header"
+        "titulo"
+        "main"
+        "formulario"
+        "footer";
+    }
+}
+footer{
+    border-top: solid 0.1rem;
+}
+
+div a{
+    color: black;
+    text-decoration: none;
+}
+footer p{
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+}
+.iconowhatsapp{
+    width: 9rem;
+
+}
+.iconoinstagram{
+    width: 9rem;
+}
+.iconofacebook{
+    width: 9rem;
+}
+.iconoubicacion{
+    width: 9rem;
+
+}
+.iconowhatsapp2{
+    width: 6rem;
+    border-radius: 50%;
+}
+.iconowhatsapp2:hover{
+    width: 7rem;
+}
+.whatsapp{
+    position: fixed;
+    bottom: 5rem;
+    right: 3rem;
+
+}
+ul li :hover{
+    background-color: rgb(223, 239, 245);
+} */

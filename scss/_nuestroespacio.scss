@@ -1,0 +1,129 @@
+
+@mixin flex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.gridsnuestroespacio{
+    background-color: rgba(218, 202, 166, 0.2);
+    display: grid;
+    grid-template-columns: 0.2fr 1.5fr 1fr 0.2fr;
+    grid-template-rows: 0.1fr 0.1fr 1.5fr 0.2fr 1fr 0.1fr;
+    grid-template-areas: 
+    "header header header header"
+    ". titulo titulo ."
+    ". galeria galeria ."
+    ". ubicacion ubicacion ."
+    ". mapa mapa ."
+    "footer footer footer footer";
+    .headernuestroespacio{
+        grid-area: header;
+        @extend .header;
+    }
+    .titulonuestroespacio{
+        grid-area: titulo;
+        border-bottom: solid white 0.1rem;
+    }
+    
+    .galeria{
+        grid-area: galeria;
+        @include flex-row-center;
+        align-items: center;
+        border-bottom: solid white 0.1rem;
+        .carrusel{
+            width: 50rem;
+            height: 70rem;
+            margin: 3rem;
+        }
+    }
+    .tituloubicacion{
+        grid-area: ubicacion;
+        text-shadow: 0 0 0.2em rgb(255, 253, 253);
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        color: black;
+    }
+    .tituloubicacion2{
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.5rem;
+        font-weight: normal;
+    }
+    .ubicacion{
+        grid-area: mapa;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .ubicacion1{
+            background-image: url(../imagenes/ubicacion8.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            text-align: center;
+            width: 30rem;
+            padding-top: 13rem;
+        }
+    }
+    
+    .footernuestroespacio{
+        grid-area: footer;
+    }
+}
+
+@media screen and (max-width:1230px){
+    .ubicacion1{
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px){
+    .gridsnuestroespacio{
+        grid-template-columns: 0.1fr 2fr 0.1fr;
+        grid-template-areas: 
+        "header header header"
+        ". titulo ."
+        ". galeria ."
+        ". ubicacion ."
+        ". mapa ."
+        "footer footer footer";
+        h1{
+            font-size: 3rem;
+        }
+        h2{
+            font-size: 3rem;
+        }
+        .galeria{
+            .carrusel{
+                width: 45rem;
+                height: 65rem;
+            }
+        }
+    }
+    .ubicacion2{
+        width: 45rem;
+    }
+}
+
+
+@media screen and (max-width:560px){
+    .gridsnuestroespacio{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        h1{
+            font-size: 2.5rem;
+        }
+        h2{
+            font-size: 2.5rem;
+        }
+        .galeria{
+            .carrusel{
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+    .ubicacion2{
+        width: auto;
+        margin: 3rem;
+    }
+}
