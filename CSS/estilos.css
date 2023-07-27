@@ -30,11 +30,6 @@
   padding-bottom: 2rem;
   color: black;
 }
-.gridstratamientoscorporales .tituloindividuales {
-  font-family: "Poppins", sans-serif;
-  font-size: 3.5rem;
-  font-weight: normal;
-}
 .gridstratamientoscorporales .individualescorp {
   grid-area: individuales;
   display: flex;
@@ -52,6 +47,12 @@
 }
 .gridstratamientoscorporales .footercorporales {
   grid-area: footer;
+}
+
+.tituloindividuales {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  font-weight: normal;
 }
 
 .fondotto {
@@ -288,11 +289,6 @@ button a {
   padding-bottom: 2rem;
   color: black;
 }
-.gridsnuestroespacio .tituloubicacion2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 3.5rem;
-  font-weight: normal;
-}
 .gridsnuestroespacio .ubicacion {
   grid-area: mapa;
   display: flex;
@@ -310,6 +306,12 @@ button a {
 }
 .gridsnuestroespacio .footernuestroespacio {
   grid-area: footer;
+}
+
+.tituloubicacion2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  font-weight: normal;
 }
 
 @media screen and (max-width: 1230px) {
@@ -703,9 +705,9 @@ footer p {
 }
 
 .header, .gridshome .headerhome, .gridstratamientoscorporales .headercorporales, .gridsttosfaciales .headerfaciales, .gridsnuestroespacio .headernuestroespacio, .gridscontacto .headercontacto, .gridslimpiezafacial .headerlimpiezafacial, .gridsdermaplaning .headerdermaplaning {
+  background-color: white;
   display: flex;
   flex-direction: row;
-  background-color: white;
   justify-content: space-between;
   padding-left: 5rem;
   padding-right: 5rem;
