@@ -1,0 +1,29 @@
+.gridscarrito{
+    background-color: rgba(218, 202, 166, 0.2);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 8fr 0.1fr;
+    grid-template-areas: 
+    "header"
+    "carrito"
+    "footer";
+    .headercarrito{
+        grid-area: header;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .contenedor{
+        grid-area: carrito;
+    }
+    .footercarrito{
+        grid-area: footer;
+    }
+}
+
+.titulocarrito{
+    margin: 3rem;
+}

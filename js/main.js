@@ -1,70 +1,125 @@
-const tratamientoscorporales=[
-    {id: 1, nombre: "anticelulitico", precio: 10800},
-    {id: 2, nombre: "anticelulitico Reafirmante", precio: 13000},
-    {id:3, nombre: "tonificador", precio:7800},
-    {id:4, nombre: "reducto I", precio:12500},
-    {id:5, nombre: "reductor II", precio:12500},
-    {id:6, nombre: "reductor III", precio:12300},
-    {id:7, nombre: "piernas perfectas", precio:9000},
-    {id:8, nombre: "bikini express", precio:13000},
-    {id:9, nombre: "promo flash", precio:10000},
-    {id:10, nombre: "promo ondas rusas", precio:9200},
-    {id:11, nombre: "maderoterapia", precio:11500},
-    {id:12, nombre: "maderoterapia + vela slim plus", precio: 14900},
-    {id:13, nombre: "maderoterapia + ondas rusas/body up", precio: 14000},
-    {id:14, nombre: "drenaje linfatico", precio: 10500},
-    {id:15, nombre: "drenaje linfatico + ondas rusas/body up", precio: 13000},
-    {id:16, nombre: "drenaje linfatico + vela slim plus", precio: 14500},
-    {id:17, nombre: "pase libre 1", precio:18900},
-    {id:18, nombre: "pase libre 2", precio: 19800},
+const tratamientos=[
+    {
+        id: 1,
+        titulo: "limpieza facial profunda",
+        precio: 4500,
+        img:"limpiezafacial.jpg"
+    },
+    {id: 2, titulo: "Dermaplaning", precio: 6500, img:"dermaplaning2.jpg"},
+    {id:3, titulo: "masaje facial kobido", precio:5000, img:"kobido.jpg"},
 ];
 
-function saludo(nombre){
-    alert("Bienvenido/a: " + nombre);
+const carrito=[];
+const tratamientosItems=document.querySelector(`#items`);
+const tratamientoscarrito= document.querySelector(`#carrito`);
+const precioTotal= document.querySelector(`#total`);
+const botonVaciar=document.querySelector(`#boton-vaciar`);
+const miLocalStorage = window.localStorage;
+
+function mostrarTratamientos(){
+    tratamientos.forEach((info)=>{
+        const miNodo=document.createElement(`div`);
+        miNodo.classList.add(`card`, `col-sm-4`);
+        const miNodoCardBody=document.createElement(`div`);
+        miNodoCardBody.classList.add(`card-body`);
+        const miNodoTitle=document.createElement(`h5`);
+        miNodoTitle.classList.add(`card-title`);
+        miNodoTitle.textContent= info.titulo;
+        const miNodoImagen=document.createElement(`img`);
+        miNodoImagen.classList.add(`img-fluid`);
+        miNodoImagen.setAttribute(`src`, info.img);
+        const miNodoPrecio=document.createElement(`p`);
+        miNodoPrecio.classList.add(`card-text`);
+        miNodoPrecio.textContent=`$${info.precio}`;
+        const miNodoBoton=document.createElement(`button`);
+        miNodoBoton.classList.add(`btn`, `btn-primary`);
+        miNodoBoton.textContent=`+`;
+        miNodoBoton.setAttribute(`marcador`, info.id);
+        miNodoBoton.addEventListener(`click`, anyadirAlCarrito);
+        miNodoCardBody.appendChild(miNodoImagen);
+        miNodoCardBody.appendChild(miNodoTitle);
+        miNodoCardBody.appendChild(miNodoPrecio);
+        miNodoCardBody.appendChild(miNodoBoton);
+        miNodo.appendChild(miNodoCardBody);
+        tratamientosItems.appendChild(miNodo);
+    });
 }
 
-for (let i = 1; i<= 3; i++){
-    let nombrecompleto = prompt("Ingresa tu nombre y apellido");
-    if(nombrecompleto != ""){
-        saludo(nombrecompleto);
-        break;
-    }else {
-        alert("No ingresaste tu nombre, intentelo nuevamente.");
+function anyadirAlCarrito(){
+    carrito.push(evento.target.getAttribute('marcador'))
+    renderizarCarrito();
+    guardarCarritoEnLocalStorage();
+};
+
+function renderizarCarrito(){
+    tratamientoscarrito.textContent=``;
+    const carritoSinDuplicado= [...new Set(carrito)];
+    carritoSinDuplicado.forEach((item)=>{
+        const miItem= tratamientos.filter((itemBaseDatos)=>{
+            return itemBaseDatos.id === parseInt(item);
+        });
+        const numeroUnidadesItem= carrito.reduce((total, itemId)=>{
+            return itemId === item ? total += 1 : total;
+        }, 0);
+        const miNodo=document.createElement(`li`);
+        miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].titulo} - ${miItem[0].precio}`;
+        const miBoton = document.createElement('button');
+        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+        miBoton.textContent = '-';
+        miBoton.style.marginLeft = '1rem';
+        miBoton.dataset.item = item;
+        miBoton.addEventListener('click', borrarItemCarrito);
+        miNodo.appendChild(miBoton);
+        tratamientoscarrito.appendChild(miNodo);
+    });
+    precioTotal.textContent = calcularTotal();
+}
+
+function borrarItemCarrito(evento) {
+    const id = evento.target.dataset.item;
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== id;
+    });
+    renderizarCarrito();
+    guardarCarritoEnLocalStorage();
+}
+
+function calcularTotal() {
+    return carrito.reduce((total, item) => {
+        const miItem = tratamientos.filter((itemBaseDatos) => {
+            return itemBaseDatos.id === parseInt(item);
+        });
+        return total + miItem[0].precio;
+    }, 0).toFixed(2);
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    renderizarCarrito();
+    localStorage.clear();
+}
+
+function guardarCarritoEnLocalStorage () {
+    miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDeLocalStorage () {
+    if (miLocalStorage.getItem('carrito') !== null) {
+        carrito = JSON.parse(miLocalStorage.getItem('carrito'));
     }
 }
 
-function buscartratamiento(array,filtro){
-    const encontrado= array.find((el)=> el.nombre.includes(filtro));
-    return encontrado;
-}
+botonVaciar.addEventListener('click', vaciarCarrito);
 
-let ingresartratamiento = prompt("Ingresa el tratamiento que quieras buscar, para cancelar ingresar 0");
+cargarCarritoDeLocalStorage();
+mostrarTratamientos();
+renderizarCarrito();
 
-const tratamientoencontrado = buscartratamiento(tratamientoscorporales,ingresartratamiento);
 
-do{
-    if (ingresartratamiento != "0" && ingresartratamiento!=""){
-        alert("Tratamiento encontrado: " + tratamientoencontrado.nombre + ", precio:$"+ tratamientoencontrado.precio);
-        break;
-    }else {
-        alert("La busqueda ha sido cancelada");
-    }
-}while (ingresartratamiento !="0" && ingresartratamiento!="");
 
-let ingresarprecio = prompt("Ingrese su presupuesto");
 
-function filtrarporprecio(array,filtro){
-    return array.filter(el=> el.precio<=filtro);
-}
-const preciotratamientos= filtrarporprecio(tratamientoscorporales, ingresarprecio);
 
-do{
-    if (isNaN(ingresarprecio)){
-        alert("Solo se pueden ingresar numeros");
-        break;
-    }else {
-        console.log(preciotratamientos);
-    }
-}while (isNaN(ingresarprecio));
+
 
 

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><!-- tipo de documento -->
+<html lang="es"><!-- atributo de lenguaje de sitio -->
+<head><!-- parte privada del sitio -->
     <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conocé nuestro espacio</title>
+    <title>Realiza tu compra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/estilos.css">
@@ -15,12 +15,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
-    <meta name="description" content="Centro Integral de Estetica Femenina ubicado en Nva Cordoba. Solicita tu turno por Whatsapp o Instagram y visitanos. ">
-    <meta name="keywords" content="estetica en cordoba capital, centro de estetica en cordoba, tratamientos esteticos, esteticas en cordoba, estetica nueva cordoba, nueva cordoba, contacto ">
+    <meta name="description" content="Centro Integral de Estetica Femenina ubicado en Nva Cordoba. Contactanos y solicita un turno por Whatsapp o Instagram ">
+    <meta name="keywords" content="estetica, centro de estetica, tratamientos esteticos, esteticas en cordoba, estetica nueva cordoba ">
 </head>
-<body>
-    <div class="gridsnuestroespacio">
-        <header class="headernuestroespacio">
+<body><!-- todo el contenido del sitio -->
+    <div class="gridscarrito">
+        <header class="headercarrito">
             <div>
                 <img src="../imagenes/logo.png" alt="logo" class="logo">
             </div>
@@ -41,10 +41,13 @@
                                 <a class="nav-link" href="../paginas/tratamientos-faciales.html">Tratamientos Faciales</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="nuestro-espacio.html">Nuestro Espacio</a>
+                                <a class="nav-link" href="../paginas/nuestro-espacio.html">Nuestro Espacio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../paginas/contacto.html">Contacto</a>
+                                <a class="nav-link" aria-current="page" href="../paginas/contacto.html">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="carrito.html">Carrito</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
@@ -55,53 +58,25 @@
                 </div>
             </nav>
         </header>
-        <section class="titulonuestroespacio">
-            <h1>NUESTRO ESPACIO</h1>
-        </section>
-        <main class="galeria">
-            <section class="carrusel">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../imagenes/nuestroespacio2.jpg" class="d-block w-100" alt="living">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../imagenes/nuestroespacio3.jpg" class="d-block w-100" alt="mesa">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../imagenes/nuestroespacio4.jpg" class="d-block w-100" alt="ventana">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../imagenes/nuestroespacio5.jpg" class="d-block w-100" alt="espejo">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </section>
-        </main>
-        <section class="tituloubicacion">
-            <h2 class="tituloubicacion2">UBICACIÓN</h2>
-        </section>
-        <section class="ubicacion">
-            <div class="ubicacion1">
-                <p>Edificio Victoria</p> 
-                <p>1er Piso</p>
-                <p>Independencia 387</p>
-                <p>Lunes a Viernes</p>
-                <p>9 a 20hs</p>
+        <div class="container">
+            <div class="row">
+                <!-- Elementos generados a partir del JSON -->
+                <main id="items" class="col-sm-8 row">
+
+                </main>
+                <!-- Carrito -->
+                <aside class="col-sm-4">
+                    <h2 class="titulocarrito">Carrito</h2>
+                    <!-- Elementos del carrito -->
+                    <ul id="carrito" class="list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total: <span id="total"></span>$</p>
+                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                </aside>
             </div>
-            <section>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.763622618964!2d-64.18846242459826!3d-31.420638074259852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a284fe7c63b9%3A0x2baefd606e4a4a5d!2sIndependencia%20387%2C%20X5000IUG%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1683381046392!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="ubicacion2"></iframe>
-            </section>
-        </section>    
-        <footer class="footernuestroespacio">
+        </div>
+        <footer class="footercarrito">
             <div>
                 <p>Dirección: Independencia 387, Córdoba; Teléfono: 0351-158654600 | Copyright © 2023</p>
             </div>
@@ -110,5 +85,6 @@
             </div>
         </footer>
     </div>
+    <script src="./js/main.js"></script>
 </body>
 </html>
